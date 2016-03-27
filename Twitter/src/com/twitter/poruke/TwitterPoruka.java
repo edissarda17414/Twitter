@@ -75,5 +75,28 @@ public class TwitterPoruka {
 	}
 
 
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		TwitterPoruka other = (TwitterPoruka) obj;
+		if (korisnik == null) {
+			if (other.korisnik != null)
+				return false;
+		} else if (!korisnik.equals(other.korisnik))
+			return false;
+		if (poruka == null) {
+			if (other.poruka != null)
+				return false;
+		} else if (!poruka.equals(other.poruka))
+			return false;
+		return true;
+	}
+
+	
 
 }
